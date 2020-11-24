@@ -7,8 +7,12 @@ def factorize(n):
     if n % p == 0:
       end = time.time()
       q = int(n / p);
+      elapsed = end - start
       print("Results: p =", p, "and q =", q)
-      print("Time elapsed:", end - start, "seconds")
+      print("Time elapsed:", elapsed, "seconds")
+      f = open("data.csv", "a")
+      f.write(str(p) + "," + str(q) + "," + str(n) + "," + str(elapsed) + "\n")
+      f.close()
       return
 
 def main():
